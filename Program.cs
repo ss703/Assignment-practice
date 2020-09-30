@@ -4,24 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sum_digits
+namespace _8_num
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int n,sum=0 , r;
-            Console.WriteLine("enter a number");
-            n = Convert.ToInt32(Console.ReadLine());
-            while(n!=0)
+            Console.WriteLine("number from 10 to 100 are");
+            for(int i=10;i<=100;i++)
             {
-                r = n % 10;
-               
-                sum = sum + r;
-                n = n / 10;
-
+                Console.WriteLine("num=" + i);
             }
-            Console.WriteLine("sum is="+sum);
             Console.ReadKey();
         }
     }
