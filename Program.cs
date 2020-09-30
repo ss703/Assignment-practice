@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _8_num
+namespace _10_natural_num
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("number from 10 to 100 are");
-            for(int i=10;i<=100;i++)
+         
+          
+            Console.WriteLine("frst 10 natural numbers are");
+            for(int i=0;i<=10;i++)
             {
-                Console.WriteLine("num=" + i);
+                Console.WriteLine("i=" + i);
             }
             Console.ReadKey();
         }
