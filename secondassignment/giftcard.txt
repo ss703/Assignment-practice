@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MainCard
+{
+    public class Giftcard
+    {
+        private long cardNo;
+        private double balance;
+        private Boolean active;
+
+        public long CardNo
+        {
+            get { return cardNo; }
+            set { cardNo = value; }
+        }
+        public double Balance
+        {
+            get { return balance; }
+            set { balance = value; }
+        }
+        public Boolean Active
+        {
+            get { return active; }
+            set { active = value; }
+        }
+        public Giftcard(long no, Boolean Active)
+        {
+            this.cardNo = no;
+        
+            this.active = Active;
+        }
+        public Giftcard()
+        {
+            this.balance = 0;
+            this.active = true;
+        }
+        public void rechargeCard(double amount)
+        {
+            if (active == true)
+            {
+                balance = balance + amount;
+            }
+            else
+            {
+                Console.WriteLine("acccount is inactive");
+            }
+        }
+        public void swiprCard(double amount)
+        {
+            if (active == true && balance > amount)
+
+            {
+                balance = balance - amount;
+                Console.WriteLine("available balance is{0}", balance);
+
+            }
+            else
+            {
+                Console.WriteLine("does not contain sufficient balance");
+            }
+
+        }
+
+
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MainCard;
+
+namespace GiftCard
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Giftcard g = new Giftcard(452222,true);
+            g.rechargeCard(2000);
+            g.swiprCard(400);
+            g.swiprCard(500);
+
+            Console.WriteLine("\n");
+            Giftcard a = new Giftcard();
+            a.rechargeCard(3000);
+            a.swiprCard(500);
+            Console.ReadKey();
+        }
+    }
+}
+
+           
+            
+       

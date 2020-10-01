@@ -1,0 +1,48 @@
+/*try catch*/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace Inner_exception
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                Console.WriteLine("enter FN ");
+                int FN = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("enter SC");
+                int SC = Convert.ToInt32(Console.ReadLine());
+                int res = FN / SC;
+                Console.WriteLine("result is  {0}", res);
+                Console.ReadKey();
+            }
+
+
+            catch (ArithmeticException ex)
+            {
+
+                //FORMAT EXCEPTION
+
+                //// StreamWriter sr = new StreamWriter(@"C:\soumya\innerException.txt");
+                //// sr.Write(ex.GetType().Name);
+                //  sr.Write(ex.Message);
+                //sr.Close();
+
+                Console.WriteLine("input is inavlid only integers are allowed", ex.Message);
+            }
+            //catch(DivideByZeroException ex)
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("no input received", ex.Message);
+            }
+
+        }
+    }
+}
