@@ -1,0 +1,101 @@
+USE ABC
+
+create table category
+(
+c_id int not  null  primary key identity(1,1),
+c_name varchar(100),
+c_tax decimal)
+
+insert into category values ('usha',9.0)
+select * from  category
+
+create table product(
+p_id int not null primary key  identity(1,1),
+p_name  varchar(100) not null,
+p_open_stock  decimal not null,
+p_cur_stock decimal not null,
+p_sale_price decimal not  null,
+p_category int  not null  foreign key references category(c_id)
+)
+
+insert into  product values('laptop',20,30,2000,1) 
+insert into  product values('mob',10,20,1000,2) 
+insert into  product values('comp',30,40,5000,3) 
+select * from product
+
+create table customer(
+cus_id int not null  primary key  identity(1,1),
+cus_name varchar(32) not null,
+cus_mobile varchar(15) not null,
+cus_open_bal decimal not null constraint def default 0,
+cus_is_active BIT  not null constraint  defa default ('true'))
+
+select * from customer
+
+insert into customer values ('a',1234,default,default)
+insert into customer values ('b',2345,default,default)
+insert into customer values ('c',7896,default,default)
+
+create table saleshead(
+sale_inv_no int not null primary key identity(1,1),
+sale_date date not null,
+customer int not  null foreign key references customer( cus_id),
+ctype char(100)
+constraint check_1 check(ctype='credit' or ctype='paid')
+)
+
+insert into saleshead values('2020-10-14',1,'credit')
+insert into saleshead values('2020-10-15',2,'paid')
+insert into saleshead values('2020-10-16',3,'credit')
+
+select * from saleshead
+
+create table salesdetail
+(
+sale_inv_no int not null foreign key references saleshead(sale_inv_no),
+product_id int not null foreign key references product(p_id),
+qty decimal not null,
+rate decimal not null)
+
+insert into salesdetail values(1,2,3,30000)
+insert into salesdetail values(2,3,4,50000)
+insert into salesdetail values(3,4,5,70000)
+
+
+select * from salesdetail
+
+
+--Q-1
+select p.p_name,c.c_name,p.p_cur_stock from product as p ,category as c where p.p_id=c.c_id; 
+
+
+
+--Q-2
+
+select cus_name from customer where cus_is_active='true'
+
+--Q3
+
+select cus_open_bal from customer
+
+---Q4
+
+select sum(sd.qty) Total from salesdetail as sd,saleshead as sh where sale_date>'2020-10-14' and sale_date<'2020-10-16'
+
+--Q5
+select p.p_name,sum(qty) Total from salesdetail as sd ,product as p where sd.product_id=p.p_id
+group  by p_name
+order by sum(qty)
+
+
+
+--Q6
+select p.p_name,sum(qty) Total from salesdetail as sd ,product as p where sd.product_id=p.p_id
+group  by p_name
+order by  sum(qty) desc
+
+--Q7
+select sh.customer ,sd.rate from saleshead as sh ,salesdetail as sd where sd.sale_inv_no=sh.sale_inv_no;
+
+
+

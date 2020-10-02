@@ -1,0 +1,85 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exception2
+{
+    class Program
+    {
+        public class InvalidInputException : Exception
+        {
+            public InvalidInputException(string message) : base(message)
+            {
+
+            }
+        }
+        public class InvalidNameException : Exception
+        {
+            public InvalidNameException(string message) : base(message)
+            {
+
+            }
+        }
+        public class InvalidCategoryException : Exception
+        {
+            public InvalidCategoryException(string message) : base(message)
+            {
+
+            }
+        }
+
+        class Customer
+        {
+            private string custNo;
+            private string custName;
+            private string category;
+
+            public Customer(string name, string Cname, string Cat)
+            {
+                this.custNo = name;
+                this.custName = Cname;
+                this.category = Cat;
+
+                if (custNo == "C" || custNo == "c")
+                {
+                    throw new InvalidInputException("number must begin with c or C");
+                }
+                if (custName.Length > 4)
+                {
+                    throw new InvalidNameException("name should contain atleast 4 char");
+                }
+                if (category == "platinum" || category == "Gold" || Cat == "silver")
+                {
+                    throw new InvalidCategoryException("cateogory should be gold,platinum or silver");
+                }
+            }
+
+            static void Main(string[] args)
+            {
+                try
+                {
+
+                    Customer c = new Customer("C123", "soum", "Gold");
+
+
+                }
+                catch (InvalidInputException e)
+                {
+                    Console.WriteLine(e);
+                }
+                catch (InvalidNameException ex)
+                {
+                    Console.WriteLine(ex);
+                }
+                catch (InvalidCategoryException exx)
+                {
+                    Console.WriteLine(exx);
+                }
+                Console.ReadKey();
+            }
+        }
+    }
+}
+

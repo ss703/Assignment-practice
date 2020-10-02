@@ -1,0 +1,107 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace product
+{
+    public class Products
+    {
+        private string productCode, productName;
+      //  private double productPrice;
+        private char categoryCode;
+
+    //  ' categoryCode'=('E-electronics' ,'A-appareals', 'T-toys');
+            private static int productCounter = 100;
+        public string ProductCode
+        {
+            get { return productCode; }
+            set { productCode = value; }
+        }
+        public string ProductName
+        {
+            get { return productName; }
+            set { productName = value; }
+        }
+        private double productPrice;
+        public double ProductPrice
+        {
+            get { return productPrice; }
+            set { productPrice = value; }
+        }
+        public char CategoryCode
+        {
+            get { return categoryCode; }
+            set { categoryCode = value; }
+        }
+           
+       //static Products()
+       // {
+       //     productCounter = 100;
+       // }
+        private string generateProductCode(char c)
+        {
+
+            int x = productCounter + 1; 
+            string prodCount = x.ToString();
+            productCode = categoryCode + prodCount;
+            return productCode;
+        }
+        public Products(string productName, double productPrice, char c)
+        {
+            this.productName = productName;
+            this.ProductPrice = productPrice;
+          //  this.categoryCode = categoryCode;
+            this.ProductCode = generateProductCode(c);
+            this.categoryCode = c;
+        }
+        public Products(string productName, double productPrice)
+        {
+            this.ProductName = productName;
+            this.productPrice = productPrice;
+            this.ProductCode = generateProductCode(categoryCode);
+           this. categoryCode = 'E';
+        }
+        public void getdetails()
+        {
+            Console.WriteLine("product code{0}", productCode);
+            Console.WriteLine("product name{0}", productName);
+            Console.WriteLine("product price{0}", productPrice);
+            Console.WriteLine("category {0}", CategoryCode);
+
+        }
+
+
+
+}
+}
+
+
+
+
+---------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using product;
+
+namespace Category_oops
+{
+    class Testproduct
+    {
+        static void Main(string[] args)
+        {
+
+            Products p = new Products("laptop", 45000.00, 'E');
+            p.getdetails();
+
+            Console.ReadKey();
+            
+
+        }
+    }
+}
