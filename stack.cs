@@ -29,6 +29,7 @@ namespace stack1
 
 
             }
+            Console.WriteLine("Removing 6 pop oprations");
             Console.WriteLine("the elements after popping" + MyStack.Pop()); 
             Console.WriteLine("the elements after popping" + MyStack.Pop());
             Console.WriteLine("the elements after popping" + MyStack.Pop());
@@ -37,22 +38,59 @@ namespace stack1
             Console.WriteLine("the elements after popping" + MyStack.Pop());
             Console.WriteLine("after 6 pop oprations");
             Console.WriteLine("the top ele of stack is{0}" + MyStack.Peek());
+            foreach (int x in MyStack)
+            {
+                Console.WriteLine("elements are in stack are" + x);
 
-             Console.WriteLine("the elements after popping" + MyStack.Pop());
+
+            }
+            Console.WriteLine("pushing here!!!!!");
+            MyStack.Push(1);
+            Console.WriteLine("removing 5 elements");
             Console.WriteLine("the elements after popping" + MyStack.Pop());
             Console.WriteLine("the elements after popping" + MyStack.Pop());
             Console.WriteLine("the elements after popping" + MyStack.Pop());
-           // Console.WriteLine("the elements after popping" + MyStack.Pop());
-            //Console.WriteLine("the elements after popping" + MyStack.Pop());
-
-            Console.WriteLine("aftaer 5 oprations");
-            //Console.WriteLine("the top ele of stack is{0}" + MyStack.Peek());
-
-
+            Console.WriteLine("the elements after popping" + MyStack.Pop());
+            Console.WriteLine("the elements after popping" + MyStack.Pop());
+            foreach (int x in MyStack)
+            {
+                Console.WriteLine("elements are in stack are" + x);
 
 
-            //Console.WriteLine("the elements after popping" + MyStack.Peek());
+            }
+            Console.WriteLine("pushing here!!!!!");
+            MyStack.Push(14);
+            MyStack.Push(16);
+            MyStack.Push(18);
+            MyStack.Push(20);
+            MyStack.Push(1);
+            Console.WriteLine("removing 4 elements");
+            Console.WriteLine("the elements after popping" + MyStack.Pop());
+            Console.WriteLine("the elements after popping" + MyStack.Pop());
+            Console.WriteLine("the elements after popping" + MyStack.Pop());
+            Console.WriteLine("the elements after popping" + MyStack.Pop());
+            Console.WriteLine("pushing here!!!!!");
+            MyStack.Push(14);
+            MyStack.Push(16);
+            MyStack.Push(18);
+            Console.WriteLine("removing 3 elements");
+            Console.WriteLine("the elements after popping" + MyStack.Pop());
+            Console.WriteLine("the elements after popping" + MyStack.Pop());
+            Console.WriteLine("the elements after popping" + MyStack.Pop());
+            Console.WriteLine("pushing here!!!!!");
+            MyStack.Push(14);
+            MyStack.Push(16);
+            Console.WriteLine("removing 4 elements");
+            Console.WriteLine("the elements after popping" + MyStack.Pop());
+            Console.WriteLine("the elements after popping" + MyStack.Pop());
+            foreach (int x in MyStack)
+            {
+                Console.WriteLine("elements are in stack are" + x);
 
+
+            }
+
+            // Console.WriteLine(MyStack.Contains(2));
             Console.ReadKey();
 
         }
