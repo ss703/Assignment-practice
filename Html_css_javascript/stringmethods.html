@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        //finding length
+        var txt = "abshgsjgdasjjh";
+        var value = txt.length;
+        document.write("value is" + value + "<br>");
+
+        //finding string in a string
+        var str = "Please locate where 'locate' occurs!";
+        var pos = str.indexOf("locate");
+        document.write("position is" + pos + "<br>");
+
+        //searching string in a string
+        var str = "Please locate where 'locate' occurs!";
+        var pos = str.search("Please");
+        document.write("searchunbg is is" + pos + "<br>");
+
+        //slice 
+        var str = "Apple, Banana, Kiwi";
+        var res = str.slice(7, 13);//start and end postion is 7 and 13
+        document.write("slicing  is" + res + "<br>");
+
+        var str = "Apple, Banana, Kiwi";
+        var res = str.slice(-12, -6);
+        document.write("slicing  is" + res + "<br>");
+
+        //substring
+        var str = "Apple, Banana, Kiwi";
+        var res = str.slice(7, 13);//start and end postion is 7 and 13
+        document.write("slicing  is" + res + "<br>");//but it caanot aacept negavtive values
+
+        //replacing
+        str = "Please visit Microsoft!";
+        var n = str.replace("Microsoft", "Dotnet");
+        document.write("replacing  is" + n + "<br>");
+
+        //uppercase
+        var text1 = "soumya!";       // String
+        var text2 = text1.toUpperCase(); 
+        document.write("uppercase text2" + text2 + "<br>");
+
+
+        //lower case
+        var text = "PRAVEEN!";       // String
+        var text3 = text1.toLoweCase(); 
+        document.write("lowercase  text3" + text3 + "<br>");
+
+        ///concat methiod
+        var a = "Hello";
+        var b = "World";
+        var c = a.concat(" ", text2);
+        document.write("lowercase  " + c + "<br>");
+
+        //trim
+        var str = "       Hello World!        ";
+        alert(str.trim());
+
+
+
+
+
+
+       
+    </script>
+
+</body>
+</html>
