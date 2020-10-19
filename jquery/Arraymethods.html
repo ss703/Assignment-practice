@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Array methods</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var names = ["soumya", "swathi", "usha"];
+        document.write("names =" + names + "<br>");
+        //join method
+        document.write(" joining names =" + names.join("*") + "<br>");
+
+        //popping
+        document.write("popping the last name =" + names.pop() + "<br>");
+        document.write("names =" + names + "<br>");
+
+        //push
+        document.write("pushing the name here =" + names.push("junnu") + "<br>");
+        document.write("names =" + names + "<br>");
+
+        //shifting
+        document.write(" shifting the first or removing the first names =" + names.shift() + "<br>");
+        document.write("names =" + names + "<br>");
+
+        //unshift
+        document.write("unshifting or adding names at the frst palce =" + names.unshift("krupa") + "<br>");
+        document.write("names =" + names + "<br>");
+
+        //change
+        names[0] = "nivi";//means replacing the name here
+        document.write("names =" + names + "<br>");
+
+        //splicing
+        names.splice(2, 0, "vinay", "praveen");
+        document.write("names =" + names + "<br>");
+        //2 =>positiom
+        //0=>how many ele should be removed
+
+        //splice to remove
+        names.splice(0, 1); 
+        document.write("names =" + names + "<br>");
+        //0=>position
+        //1=>1 ele will be deleted
+
+        //concat
+        var vowels = ["a", "e","i","o","u"];
+        var conso=["b","c","s","w"];
+        var alpha = vowels.concat(conso);
+        document.write("total alpha =" + alpha + "<br>");
+        
+
+
+    </script>
+
+</body>
+</html>

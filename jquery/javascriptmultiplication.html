@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        function f1() {
+            var x1 = document.getElementById('n1').value;
+            var x2 = document.getElementById('n2').value;
+            for (var i = 1; i <= x2; i++) {
+                document.write(x1 + "*" + i + "=" + x1 * i + "<br>")
+            }
+
+        }
+
+    </script>
+    <form action="" name="multipliaction table" onclick="f1()">
+      <input type="text" name="n" value="" id="n1" /></br>
+        <input type="text" name="x" value="" id="n2" /></br>
+        <input type="submit" value="submit" />
+
+    </form>
+
+</body>
+</html>
