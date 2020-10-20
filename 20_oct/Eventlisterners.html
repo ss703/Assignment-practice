@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+</head>
+<body>
+    <p>Demomstration of EventListeners</p>
+    <button id="demo">click</button>
+    <script>
+        document.getElementById("demo").addEventListener("click", function () {
+            alert("This is evnt listerners");
+            document.write("this is event literners");
+
+        });
+    </script>
+
+    <p>Demonstartion of explicit Eventlisterners</p>
+    <button id="a">click here</button>
+    <script>
+        function ex() {
+            alert("This is done explicit");
+            document.write("this is event literners");
+            console.log("this is event listerner");
+
+        }
+
+        document.getElementById("a").addEventListener("click", ex);
+    </script>
+
+   <input type="button" id="b"  value="click me!!"/>
+
+    <script>
+        document.getElementById("b").addEventListener("click",f1);
+
+        function f1() {
+            alert("heyy");
+
+        }
+    </script>
+
+
+
+
+
+
+</body>
+</html>

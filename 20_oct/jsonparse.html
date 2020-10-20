@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JSON parse</title>
+</head>
+<body>
+
+    <p id="a"></p>
+    <script>
+        var x = '{"name":"sou","age":22,"comp":"DXC"}'
+        var obj = JSON.parse(x);
+        document.getElementById("a").innerHTML = obj.name + "" + obj.age;
+    </script>
+
+   
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Events </title>
+
+
+</head>
+<body>
+    <!--onmouseovre and mouseout-->
+    <!--first example-->
+    <p>demonstrates the mouseover and mouseout</p>
+    <h1 id="demo" onmouseover="f1()" onmouseout="f2()">Mouse over me</h1>
+
+    <script>
+        function f1() {
+            document.getElementById("demo").style.color = "red";
+
+
+            function f2() {
+                document.getElementById("demo").style.color = "green";
+
+            }
+    </script>
+
+    <!--//second example-->
+    <h1 id="a">Mouse over</h1>
+    <script>
+        document.getElementById("a").onmouseover = function () { f3() };
+        document.getElementById("a").onmouseout = function () { f4() };
+
+        function f3() {
+            document.getElementById("a").style.color = "yello";
+        }
+
+        function f4() {
+            document.getElementById("a").style.color = "black";
+        }
+
+
+    </script>
+
+    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="dhoni.png" alt="Dhoni" width="150" height="100">
+
+
+    <!--Third Ex-->
+    <script>
+        function bigImg(x) {
+            x.style.height = "64px";
+            x.style.width = "64px";
+        }
+
+        function normalImg(x) {
+            x.style.height = "32px";
+            x.style.width = "32px";
+        }
+    </script>
+
+    <!--forth ex-->
+    <div onmouseover="f5(this) " style="background-color:aqua;width:150px;height:100px;font-size:large;font-style:oblique;padding:100px;">Mouseon over</div></br></br>
+    <script>
+        function f5(id) {
+            id.innerHTML = "soumya";
+
+        }
+    </script>
+
+
+    <div onmouseout="f6(this) " style="background-color:aqua;width:150px;height:100px;font-size:large;font-style:oblique;padding:100px;">Mouseon out</div></br></br>
+    <script>
+        function f6(id) {
+            id.innerHTML = "soumya";
+
+        }
+    </script>
+
+
+    <!--mousedown and mouseup-->
+
+    <div onmouseup="f7(this)" style="background-color:orangered;width:150px;height:100px;padding:100px">mouseup</div></br></br>
+
+    <div onmousedown="f8(this)" style="background-color:blue;width:200px;height:100px;padding:100px">mousedown</div></br></br>
+
+    <script>
+        function f7(id) {
+            id.innerHTML = "swathi";
+
+        }
+        function f8(id) {
+            id.innerHTML = "swathi";
+
+        }
+
+
+    </script>
+
+    <!--onload using Eventlister-->
+
+    <p>This example uses the addEventListener() method to attach a "load" event to an iframe element.</p>
+
+    <iframe id="myFrame" src="/dhoni.png"></iframe>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("myFrame").addEventListener("load", myFunction);
+
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Iframe is loaded.";
+        }
+    </script>
+
+    <img src="dhoni.jpg" onload="loadImage()" width="100" height="132">
+
+    <script>
+        function loadImage() {
+            alert("Image is loaded");
+        }
+    </script>
+
+    <!--onchange-->
+    <p>select a car from list</p>
+
+    <select id="a" onchange="f10">
+
+        <option value="maruthi suzuki">maruthi suzuki</option>
+        <option value="BMW">BMW</option>
+
+
+    </select>
+    <p id="demo"></p>
+    <script>
+        function f10() {
+            var x = document.getElementById("a").value;
+            document.getElementById("demo").innerHTML = "selected:" + x;
+
+        }
+    </script>
+
+    <p>select a college from the given list</p>
+
+    <select id="d" onchange="f11">
+
+        <option value="RV">RV </option>
+        <option value="RV">PESET </option>
+        <option value="RV">Dayandasagar </option>
+
+    </select>
+
+    <p id="a"></p>
+
+    <script>
+        function f11() {
+            var y = document.getElementById("d").value;
+            document.getElementById("a").innerHTML = "ok selected": +y;
+
+        }
+    </script>
+
+
+    <!--onfocusout-->
+    <input type="text" onfocus="f11(this)" />
+    <script>
+        function f11(x) {
+            x.style.background = "pink";
+        }
+    </script>
+
+    <!--onunload event-->
+
+    <h1>unload event</h1>
+
+    <p>Close this window or press F5 to reload the page.</p>
+    <p><strong>Note:</strong> Due to different browser settings, this event may not always work as expected.</p>
+
+    <script>
+        function f12() {
+            alert("Here is unload!!");
+        }
+    </script>
+
+
+</body>
+</html>
