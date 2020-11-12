@@ -1,0 +1,45 @@
+﻿@using Registraion_stronglytyped.Models
+@model RegisterDeatils
+
+
+
+<h2>Welocme to Registration Form!!</h2>
+
+@using (Html.BeginForm("form"))
+{
+    <label>
+        UserName
+        @Html.TextBoxFor(model => model.UserName)
+    </label>
+    <br />
+
+    <label>password @Html.TextAreaFor(model => model.Password)</label>
+    <br />
+    <label>
+        Address
+        @Html.TextAreaFor(model => model.Address)<br />
+    </label><br/>
+    <label>Gender
+        <div class="form-group">
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(model => model.Gender, true, new { id = "male-true" })
+                    @Html.Label("male-true", "Male")
+                </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/><br/><br/>
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(model => model.Gender, false, new { id = "female-true" })
+                    @Html.Label("female-true", "Female")
+                </label>
+</label>
+    <br /><br/><br/>
+  <div>  <input type="submit" value="Register"    </div>
+    
+}
+
+@*@Html.DropDownListFor(model => model.Courses, new SelectList(Enum.GetValues(typeof(Courses))), new { @class = "form-control" })
+
+    @Html.ListBoxFor(model => model.Skills, new SelectList(Enum.GetValues(typeof(skills))), new { @class = "form-control" })*@
+
+
+
+
